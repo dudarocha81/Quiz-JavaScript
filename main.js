@@ -92,22 +92,26 @@ const perguntas = [
 ];
 
 const quiz = document.querySelector('#quiz');
+//querySelector seleciona o primeiro elemento dentro do documento correspondente ao grupo especificado de seletores.
 const template = document.querySelector('template');
 
-
+//para cada item na Variavel perguntas
 for(const item of perguntas){
+    //quizItem = O conteúdo dentro do elemento template é copiado pelo cloneNode. true significa que todo o conteúdo deve ser copiado para quizItem.
     const quizItem = template.content.cloneNode(true); 
-    quizItem.querySelector('h3').textContent = item.pergunta;
+
+    //Dentro de quizItem é chamado o texto do primeiro elemento h3, que é atribuído para a propriedade pergunta do objeto item. Atualiza o conteúdo de <h3> dentro do quizItem com o valor da propriedade pergunta do objeto item. 
+    item.pergunta = quizItem.querySelector('h3').textContent;
 
     for( let resposta of item.respostas) {
-        const dt = quizItem.querySelector('dl dt').cloneNode(true)
-        dt.querySelector('span').textContent = resposta
+        const dt = quizItem.querySelector('dl dt').cloneNode(true);//cria uma cópia do nó, incluindo o <dt> e seu conteúdo.
+       dt.querySelector('span').textContent = resposta;
     
-        quizItem.querySelector('dl').appendChild(dt)
+        quizItem.querySelector('dl').appendChild(dt); //O <dt> é anexado como um novo filho ao elemento <dl>. Agora o conteúdo clonado de <dt> está dentro da <dl>
       }
     
-      
-      quizItem.querySelector('dl dt').remove()
+      quizItem.querySelector('dl dt').remove();
+      //remove o dt que está em dl, deletando o texto "pergunta 01"
       
       // coloca a pergunta na tela
       quiz.appendChild(quizItem)
