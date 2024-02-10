@@ -1,0 +1,7 @@
+{
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "cSpell.language": "en,pt-BR",
+    "cSpell.words": [
+        "Variavel"
+    ]
+}
