@@ -1,0 +1,16 @@
+body{
+    background-image: radial-gradient(circle, #ac8cd360 60%, #e5b0df);
+    color: #303030;
+}
+#acertos{
+    display: flex;
+    justify-content: center;
+    position: fixed;
+    top: 27px;
+    right: 25px;
+    background-color: #d291bc;
+    padding: 5px;
+    border-radius: 4px;
+    font-size: 15px;
+}
+
