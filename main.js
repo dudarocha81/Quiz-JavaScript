@@ -1,4 +1,4 @@
-const perguntas = [
+const perguntas = [ //array que contém objetos 
     {
         pergunta: "O que é JavaScript?",
         respostas: [
@@ -91,9 +91,9 @@ const perguntas = [
     },
 ];
 
-const quiz = document.querySelector('#quiz');
-const template = document.querySelector('template');
-const corretas = new Set();
+const quiz = document.querySelector('#quiz'); //Seleciona o elemento HTML onde o quiz será exibido.
+const template = document.querySelector('template');//Seleciona um elemento <template> que contém a estrutura HTML que será clonada para cada pergunta.
+const corretas = new Set(); //armazena as perguntas que foram respondidas corretamente.
 const totalDePerguntas = perguntas.length;
 const mostrarTotal = document.querySelector('#acertos span');
 mostrarTotal.textContent = corretas.size + ' de ' + totalDePerguntas;
